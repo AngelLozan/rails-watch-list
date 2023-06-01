@@ -1,0 +1,16 @@
+<div id="<%= dom_id bookmark %>">
+
+  <% movie_index = bookmark.movie_id %>
+  <% list_index = bookmark.list_id %>
+
+<%= link_to bookmark do %>
+  <div class="card-product mt-3">
+    <%= image_tag "bookmark-solid.svg", alt: "bookmark" %>
+    <div class="card-product-infos">
+      <h2><%= Movie.find(movie_index).title %></h2>
+      <p><%= bookmark.comment %></p>
+      <p>List: <%= List.find(list_index).name %></p>
+    </div>
+  </div>
+<% end %>
+</div>

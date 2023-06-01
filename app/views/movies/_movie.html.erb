@@ -1,0 +1,21 @@
+<div id="<%= dom_id movie %>">
+  <%= image_tag movie.poster_url, alt: "Le Wagon", width: 200 %>
+  <br>
+  <h1>
+    <strong> <%= movie.title %></strong>
+  </h1>
+
+  <p>
+    <strong>Overview:</strong>
+    <%= movie.overview %>
+  </p>
+
+    <div class="d-flex flex-row">
+     <strong>Rating:</strong>
+        <small>
+          <% movie.rating.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+        </small>
+        </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container mt-5 py-5">
+  <div class="text-center">
+    <h1><%= @list.name %></h1>
+  </div>
+
+  <p style="color: green"><%= notice %></p>
+
+  <div class="row" id="movies">
+   <% @list.movies.each do |movie| %>
+    <% rating = movie.rating %>
+    <% poster_url = movie.poster_url %>
+      <div class="col-sm-6">
+        <div class="card my-3 mx-3 p-3 shadow rounded">
+        <%= image_tag poster_url, alt:"movie poster", class:"card-img-top" %>
+          <div class="card-body">
+              <h5 class="card-title"><%= movie.title %></h5>
+              <p class="card-text"><%= movie.overview %></p>
+              <div class="d-flex flex-row">
+              <small>
+                <% movie.rating.times do %>
+                  <i class="fa-solid fa-star"></i>
+                <% end %>
+                <p><%= movie.rating %> / 10</p>
+              </small>
+              </div>
+            </div>
+
+          <div class="d-flex flex-row">
+            <p>
+              <%= link_to "Show this movie", movie, class: "btn btn-primary mt-3" %>
+            </p>
+            <% arr = @list.bookmarks.select { |b| b.movie_id != movie.id} %>
+            <% if arr.length < 0 %>
+              <%= button_to "Delete", movie, method: :delete, class:"btn btn-danger mt-3 mx-3" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+    <div class="d-flex flex-row justify-content-between">
+      <%= link_to "Edit this list", edit_list_path(@list), class: "btn btn-info shadow-sm rounded" %>
+      <%= button_to "Destroy this list", @list, method: :delete, class:"btn btn-danger shadow-sm rounded" %>
+  </div>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="container mt-5 py-5">
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @bookmark %>
+
+  <div class="d-flex flex-row justify-content-between">
+    <%= link_to "Edit this bookmark", edit_bookmark_path(@bookmark), class:"btn btn-info shadow-sm mt-3 rounded" %>
+    <%= button_to "Destroy this bookmark", @bookmark, method: :delete, class:"btn btn-danger shadow-sm mt-3 rounded" %>
+  </div>
+
+</div>
