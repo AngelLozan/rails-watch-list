@@ -10,7 +10,8 @@ http.use_ssl = true
 
 request = Net::HTTP::Get.new(url)
 request["accept"] = 'application/json'
-request["Authorization"] = 'Bearer ENV["MOVIE_KEY"] '
+request["Authorization"] = "Bearer #{ENV['MOVIE_KEY']}"
+
 
 response = http.request(request)
 response = JSON.parse(response.read_body) # type: Hash
