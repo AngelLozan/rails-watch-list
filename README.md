@@ -1,24 +1,6 @@
-# README
+# Simple Movie List App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![A movie Poster](https://image.tmdb.org/t/p/original/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Description:
+A simple active record rails app that allows a user to categorize movies in lists, bookmark movies, add them to lists and add movies. Allows for image upload functionality and customization in movies and lists functions.
