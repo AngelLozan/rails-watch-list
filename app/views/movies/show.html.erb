@@ -5,8 +5,9 @@
 
   <%= render @movie %>
 
-  <div>
-    <%= link_to "Edit this movie", edit_movie_path(@movie), class:"btn btn-info shadow-sm mt-3 rounded" %>
+  <div class="my-3 d-flex justify-content-evenly">
+    <%= link_to "Edit this movie's details", edit_movie_path(@movie), class:"btn btn-info shadow-sm rounded" %>
+    <%= link_to "Add this movie to a list by bookmarking it.", new_bookmark_path, class: "btn btn-primary rounded shadow-sm" %>
   </div>
 
 </div>

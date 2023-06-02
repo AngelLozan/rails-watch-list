@@ -4,8 +4,8 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :comment %>
-    <%= f.association :movie %>
+    <%= f.input :comment, placeholder: "Enter your thoughts" %>
+    <%= f.association :movie, prompt: "Select a movie", input_html: {data: {controller: "tom-select"}} %>
     <%= f.association :list %>
   </div>
 
