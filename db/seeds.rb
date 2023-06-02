@@ -3,6 +3,7 @@ require 'net/http'
 require 'openssl'
 require 'json'
 
+# This happens thanks to the gem cloudinary in the background and the env is in the heroku app or local .env file for dev. 
 puts "Adding a photo to one list... "
 file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
 list = List.new(name: "NES")
