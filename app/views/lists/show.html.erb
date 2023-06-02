@@ -1,6 +1,9 @@
-<div class="container mt-5 py-5">
-  <div class="text-center">
-    <h1><%= @list.name %></h1>
+<%# <div class="container mt-5 py-5"> %>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
+    <div class="container">
+      <h1><%= @list.name %></h1>
+    </div>
   </div>
 
   <p style="color: green"><%= notice %></p>
@@ -40,7 +43,7 @@
   </div>
 
 
-    <div class="d-flex flex-row justify-content-between">
+    <div class="d-flex flex-row justify-content-evenly">
       <%= link_to "Edit this list", edit_list_path(@list), class: "btn btn-info shadow-sm rounded" %>
       <%= button_to "Destroy this list", @list, method: :delete, class:"btn btn-danger shadow-sm rounded" %>
   </div>

@@ -1,4 +1,33 @@
+// .card-category {
+//   background-size: cover;
+//   background-position: center;
+//   height: 180px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: white;
+//   font-size: 24px;
+//   font-weight: bold;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   text-decoration: none;
+//   border-radius: 5px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2015/09/21/14/46/banner-949931_960_720.jpg);
+//   transition: background-color 0.3s ease; /* Add a transition effect to the background-color property */
+// }
+
+// a {
+//   text-decoration: none;
+// }
+
+// .card-category:hover {
+//   text-decoration: none;
+//   color: white;
+//   background: rgba(109, 113, 117, 0.5); /* Light gray with opacity */
+// }
+
 .card-category {
+  position: relative; /* Add position relative for containing the pseudo-element */
   background-size: cover;
   background-position: center;
   height: 180px;
@@ -8,11 +37,27 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2015/09/21/14/46/banner-949931_960_720.jpg);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Grayish film color */
+  opacity: 0; /* Initially transparent */
+  transition: opacity 0.3s ease; /* Add transition effect for opacity */
+  border-radius: 5px;
+}
+
+.card-category:hover::before {
+  opacity: 1; /* Show the grayish film on hover */
 }
 
 a {
@@ -22,5 +67,4 @@ a {
 .card-category:hover {
   text-decoration: none;
   color: white;
-  background: rgba(109, 113, 117, 0.5); /* Light gray with opacity */
 }

@@ -3,6 +3,14 @@ require 'net/http'
 require 'openssl'
 require 'json'
 
+puts "Adding a photo to one list... "
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+list = List.new(name: "NES")
+list.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+list.save
+puts "Photo added to #{list.name} list!"
+
+# Actions for seeding movies to db
 url = URI("https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc")
 
 http = Net::HTTP.new(url.host, url.port)
